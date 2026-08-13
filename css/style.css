@@ -126,7 +126,9 @@ nav h1 {
     background: #a66cff;
     transform: translateY(-2px);
 }
-
+.botao:focus {
+    outline: none;
+}
 
 /* PROJETOS */
 
