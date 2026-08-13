@@ -1,0 +1,342 @@
+* {
+    margin: 0;
+    padding: 0;
+    box-sizing: border-box;
+}
+
+html {
+    scroll-behavior: smooth;
+}
+
+body {
+    font-family: Arial, sans-serif;
+    background: #0d0b14;
+    color: #ffffff;
+}
+
+
+/* HEADER */
+
+header {
+    position: sticky;
+    top: 0;
+    z-index: 10;
+
+    background: #100d1a;
+    border-bottom: 1px solid #292238;
+}
+
+nav {
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 20px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+nav h1 {
+    font-size: 22px;
+}
+
+.menu {
+    display: flex;
+    gap: 25px;
+}
+
+.menu a {
+    color: #bdb5d6;
+    text-decoration: none;
+
+    transition: 0.3s;
+}
+
+.menu a:hover {
+    color: #a66cff;
+}
+
+
+/* HOME */
+
+.home {
+    min-height: 600px;
+
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 80px 20px;
+
+    display: flex;
+    align-items: center;
+}
+
+.hero {
+    max-width: 700px;
+}
+
+.tag {
+    color: #a66cff;
+
+    font-size: 13px;
+    font-weight: bold;
+
+    letter-spacing: 2px;
+
+    margin-bottom: 15px;
+}
+
+.hero h2 {
+    font-size: clamp(40px, 7vw, 70px);
+    line-height: 1.05;
+
+    margin-bottom: 25px;
+}
+
+.hero > p:not(.tag) {
+    color: #aaa3bd;
+
+    font-size: 18px;
+    line-height: 1.7;
+
+    margin-bottom: 30px;
+}
+
+
+/* BOTÃO */
+
+.botao {
+    display: inline-block;
+
+    padding: 13px 22px;
+
+    border-radius: 10px;
+
+    background: #8b5cf6;
+    color: white;
+
+    text-decoration: none;
+    font-weight: bold;
+
+    transition: 0.3s;
+}
+
+.botao:hover {
+    background: #a66cff;
+    transform: translateY(-2px);
+}
+
+
+/* PROJETOS */
+
+.projetos {
+    max-width: 1100px;
+    margin: auto;
+
+    padding: 80px 20px;
+}
+
+.titulo-secao {
+    margin-bottom: 40px;
+}
+
+.titulo-secao h2 {
+    font-size: 40px;
+
+    margin-bottom: 10px;
+}
+
+.titulo-secao > p:last-child {
+    color: #aaa3bd;
+}
+
+
+/* CARDS */
+
+.cards {
+    display: grid;
+
+    grid-template-columns:
+        repeat(auto-fit, minmax(280px, 1fr));
+
+    gap: 20px;
+}
+
+.card {
+    background: #15111f;
+
+    border: 1px solid #292238;
+    border-radius: 16px;
+
+    overflow: hidden;
+
+    transition: border-color 0.3s;
+}
+
+.card:hover {
+    border-color: #6341a5;
+}
+
+
+/* SUMMARY */
+
+.card summary {
+    list-style: none;
+
+    cursor: pointer;
+
+    padding: 22px;
+
+    display: flex;
+    align-items: center;
+    justify-content: space-between;
+}
+
+.card summary::-webkit-details-marker {
+    display: none;
+}
+
+.card-cabecalho {
+    display: flex;
+    align-items: center;
+
+    gap: 15px;
+}
+
+.icone {
+    width: 50px;
+    height: 50px;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    border-radius: 12px;
+
+    background: #24183a;
+    color: #a66cff;
+
+    font-weight: bold;
+}
+
+.card h3 {
+    margin-bottom: 6px;
+}
+
+.card-cabecalho p {
+    color: #817990;
+
+    font-size: 13px;
+}
+
+.seta {
+    color: #8d82a3;
+
+    font-size: 25px;
+
+    transition: transform 0.3s;
+}
+
+.card[open] .seta {
+    transform: rotate(180deg);
+}
+
+
+/* EXPANSÃO */
+
+.conteudo {
+    display: grid;
+
+    grid-template-rows: 0fr;
+
+    opacity: 0;
+
+    transition:
+        grid-template-rows 0.4s ease,
+        opacity 0.4s ease;
+}
+
+.conteudo-interno {
+    overflow: hidden;
+
+    padding: 0 22px;
+}
+
+.card[open] .conteudo {
+    grid-template-rows: 1fr;
+
+    opacity: 1;
+}
+
+.card[open] .conteudo-interno {
+    padding-bottom: 22px;
+}
+
+
+/* IMAGEM */
+
+.imagem-projeto {
+    width: 100%;
+    height: 180px;
+
+    margin-bottom: 20px;
+
+    border-radius: 12px;
+
+    background: #211a2e;
+
+    display: flex;
+    align-items: center;
+    justify-content: center;
+
+    color: #756b87;
+
+    font-size: 13px;
+}
+
+
+/* DESCRIÇÃO */
+
+.conteudo-interno > p {
+    color: #aaa3bd;
+
+    line-height: 1.6;
+
+    margin-bottom: 20px;
+}
+
+
+/* FOOTER */
+
+footer {
+    border-top: 1px solid #292238;
+
+    text-align: center;
+
+    padding: 30px 20px;
+
+    color: #756b87;
+
+    font-size: 14px;
+}
+
+
+/* CELULAR */
+
+@media (max-width: 600px) {
+
+    nav {
+        flex-direction: column;
+        gap: 15px;
+    }
+
+    .home {
+        min-height: 500px;
+    }
+
+    .hero h2 {
+        font-size: 42px;
+    }
+
+}
