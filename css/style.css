@@ -120,15 +120,14 @@ nav h1 {
     font-weight: bold;
 
     transition: 0.3s;
+    -webkit-tap-highlight-color: transparent;
 }
 
 .botao:hover {
     background: #a66cff;
     transform: translateY(-2px);
 }
-.botao:focus {
-    outline: none;
-}
+
 
 /* PROJETOS */
 
